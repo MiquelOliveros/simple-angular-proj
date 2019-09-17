@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
+import { InitComponent } from './init/init.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlaceholderComponent,
+    InitComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
