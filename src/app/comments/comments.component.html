@@ -1,1 +1,14 @@
-<p>comments works!</p>
+<div class="content" role="main">
+    <div>
+        <ul *ngFor="let comment of comments">
+            <div style="background-color: lavender; padding: 2px; text-align: center">
+                <p style="text-align: left">
+                    <strong>Name:</strong> {{comment.name}}<br>
+                    <strong>Email:</strong> {{comment.email}}<br>
+                </p>
+                <button id="but-show-comment" (click)="getCommentbody(comment.id)">GET Body</button>
+            </div>
+        </ul>
+        <br>
+    </div>
+</div>

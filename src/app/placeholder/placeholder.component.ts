@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-placeholder',
@@ -9,14 +10,21 @@ import { HttpClient } from '@angular/common/http'
 export class PlaceholderComponent{
 
   private urlPlaceholder : string = "https://jsonplaceholder.typicode.com";
-  posts = [];
+  private posts = [];
+  private id : [];
 
-  constructor(private httpClient: HttpClient) { }
-
-  getPosts(){
-    this.httpClient.get(this.urlPlaceholder + '/posts').subscribe((res : any[]) =>{
-      console.log(res)
+  constructor(private dataService: DataService, private httpClient: HttpClient) {
+    this.dataService.get_posts().subscribe((res: any[]) => {
+      console.log(res);
       this.posts = res;
+    });
+    
+  }
+
+  getPostBody(number: Number){
+    this.httpClient.get(this.urlPlaceholder + '/posts?id=' + number).subscribe((res : any) =>{
+      console.log(res)
+      this.id = res;
     });
   }
 

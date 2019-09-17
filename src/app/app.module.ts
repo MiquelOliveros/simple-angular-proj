@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { InitComponent } from './init/init.component';
 import { CommentsComponent } from './comments/comments.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CommentsComponent } from './comments/comments.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SweetAlert2Module
   ],
   providers: [],
   bootstrap: [AppComponent]

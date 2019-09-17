@@ -1,15 +1,13 @@
 <div class="content" role="main">
-    <button (click)="getPosts()">GET /products</button>
-
-    <span>
+    <div>
         <ul *ngFor="let post of posts">
             <div style="background-color: lavender; padding: 2px; text-align: center">
-                <p style="text-align: center">
-                    id: {{post.id}} <br>
-                    name: {{post.title}}<br>
+                <p style="text-align: left">
+                    <strong>Name:</strong> {{post.title}}<br>
                 </p>
+                <button id="but-show-posts" (click)="getPostBody(post.id)">GET Body</button>
             </div>
         </ul>
         <br>
-    </span>
+    </div>
 </div>
