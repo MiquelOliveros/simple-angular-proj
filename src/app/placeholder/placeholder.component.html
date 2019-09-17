@@ -1,1 +1,15 @@
-<p>placeholder works!</p>
+<div class="content" role="main">
+    <button (click)="getPosts()">GET /products</button>
+
+    <span>
+        <ul *ngFor="let post of posts">
+            <div style="background-color: lavender; padding: 2px; text-align: center">
+                <p style="text-align: center">
+                    id: {{post.id}} <br>
+                    name: {{post.title}}<br>
+                </p>
+            </div>
+        </ul>
+        <br>
+    </span>
+</div>
